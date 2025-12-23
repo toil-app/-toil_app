@@ -1,0 +1,9 @@
+{
+  "welcome": "ToilApp වෙත සාදරයෙන් පිළිගනිමු",
+  "select_language": "භාෂාව තෝරන්න",
+  "current_language": "වර්තමාන භාෂාව: {{language}}",
+  "language_en": "ඉංග්‍රීසි",
+  "language_sl": "ස්ලෝවේනියානු",
+  "language_ta": "දෙමළ",
+  "language_si": "සිංහල"
+}

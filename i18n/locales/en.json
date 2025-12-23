@@ -1,0 +1,9 @@
+{
+  "welcome": "Welcome to ToilApp",
+  "select_language": "Select language",
+  "current_language": "Current language: {{language}}",
+  "language_en": "English",
+  "language_sl": "Slovenian",
+  "language_ta": "Tamil",
+  "language_si": "Sinhala"
+}

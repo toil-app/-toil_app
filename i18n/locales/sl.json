@@ -1,0 +1,9 @@
+{
+  "welcome": "Dobrodošli v ToilApp",
+  "select_language": "Izberite jezik",
+  "current_language": "Trenutni jezik: {{language}}",
+  "language_en": "Angleščina",
+  "language_sl": "Slovenščina",
+  "language_ta": "Tamilščina",
+  "language_si": "Sinhalščina"
+}
