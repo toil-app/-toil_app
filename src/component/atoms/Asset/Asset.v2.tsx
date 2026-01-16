@@ -32,8 +32,8 @@ const Asset_V2: React.FC<AssetV2Props> = ({
 
   return (
     <View style={[styles.container, componentStyle?.containerStyle]}>
-      {/* ✅ Show loader only when image is loading */}
-      {/* ✅ Show placeholder only if image fails */}
+      {/*  Show loader only when image is loading */}
+      {/*  Show placeholder only if image fails */}
       {hasImageFailed && placeHolder && (
         <Image
           source={placeHolder}
@@ -42,7 +42,7 @@ const Asset_V2: React.FC<AssetV2Props> = ({
         />
       )}
 
-      {/* ✅ Show image only after successful load */}
+      {/*  Show image only after successful load */}
       {image && (
         <Image
           source={image}
