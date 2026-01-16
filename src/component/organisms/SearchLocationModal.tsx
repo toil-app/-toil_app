@@ -32,7 +32,7 @@ const SearchLocationModal: React.FC<Props> = ({ visible, onClose, onSelect }) =>
 
 
     // MapTiler API key (replace with your actual key)
-    const MAPTILER_API_KEY = '';
+    const MAPTILER_API_KEY = '5GXyuXyljnq2fw1GrmoT';
 
     // Call MapTiler geocoding API
     const fetchLocations = React.useCallback(async (searchQuery: string) => {
