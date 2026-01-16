@@ -5,6 +5,7 @@ import _ from 'lodash';
 const reducerModule: Record<string, any> = {
   common: require(`../../module/common/Reducer`),
   auth: require(`../../module/auth/Reducer`),
+  user: require(`../../module/user/Reducer`),
 };
 
 const Reducers = _(ModuleSet)

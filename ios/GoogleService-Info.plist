@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBsq_l7zYD8LYPW5nhipXH6MV0QGpPtLlI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>312869617692</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.toilapp</string>
+	<key>PROJECT_ID</key>
+	<string>toil-e94cd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>toil-e94cd.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:312869617692:ios:6e1ca6c597634c1a4c1fd9</string>
+</dict>
+</plist>

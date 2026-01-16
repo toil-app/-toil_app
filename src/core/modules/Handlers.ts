@@ -5,6 +5,7 @@ import ModuleSet from './AppModules';
 const handlerModule: Record<string, any> = {
   common: require(`../../module/common/Handler`),
   auth: require(`../../module/auth/Handler`),
+  user: require(`../../module/user/Handler`),
 };
 
 export const Handlers = _(ModuleSet)

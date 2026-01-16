@@ -1,1 +1,1 @@
-export default ['common', 'auth'];
+export default ['common', 'auth', 'user'] as const;

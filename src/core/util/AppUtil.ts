@@ -34,16 +34,59 @@ const createAction = <
 const Logger = (_module: string, _file?: string) => {
   const prefix = _file ? `${_module}:${_file}` : _module;
   const ts = () => new Date().toISOString();
+  // Small helper: decide if styled CSS output is available (browser devtools)
+  const supportsCss = () => {
+    try {
+      // In Chrome/DevTools console, %c styling works. In Metro/Node, it doesn't.
+      // Heuristic: if globalThis.document exists, assume browser devtools.
+      // Use globalThis to avoid TypeScript window/global issues.
+      return typeof globalThis !== 'undefined' && (globalThis as any).document;
+    } catch {
+      return false;
+    }
+  };
+
+  const ansi = {
+    reset: '\u001b[0m',
+    red: '\u001b[31m',
+    yellow: '\u001b[33m',
+    green: '\u001b[32m',
+    blue: '\u001b[34m',
+  };
+
+  const formatLabel = () => `[${ts()}] [${prefix}]`;
 
   return {
     log: (..._args: any[]) => {
-      console.log(`[${ts()}] [${prefix}]`, ..._args);
+      const label = formatLabel();
+      if (supportsCss()) {
+        // browser console: use %c styling
+        // green label
+        console.log(`%c${label}`, 'color: #0a0; font-weight: 600;', ..._args);
+      } else {
+        // terminal / metro: use ANSI colors
+        console.log(`${ansi.green}${label}${ansi.reset}`, ..._args);
+      }
     },
     warn: (..._args: any[]) => {
-      console.warn(`[${ts()}] [${prefix}]`, ..._args);
+      const label = formatLabel();
+      if (supportsCss()) {
+        console.warn(
+          `%c${label}`,
+          'color: #b58900; font-weight: 600;',
+          ..._args,
+        );
+      } else {
+        console.warn(`${ansi.yellow}${label}${ansi.reset}`, ..._args);
+      }
     },
     error: (..._args: any[]) => {
-      console.error(`[${ts()}] [${prefix}]`, ..._args);
+      const label = formatLabel();
+      if (supportsCss()) {
+        console.error(`%c${label}`, 'color: #d00; font-weight: 700;', ..._args);
+      } else {
+        console.error(`${ansi.red}${label}${ansi.reset}`, ..._args);
+      }
     },
   };
 };
@@ -66,7 +109,6 @@ const createLogger = (_module = 'default', _level = 'debug') => {
     },
     info: (..._args: any[]) => {
       if (current <= levels.info) {
-        // eslint-disable-next-line no-console
         console.info &&
           console.info(`[${new Date().toISOString()}] [${_module}]`, ..._args);
       }

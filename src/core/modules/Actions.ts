@@ -4,6 +4,7 @@ import _ from 'lodash';
 const actionModule: Record<string, any> = {
   common: require(`../../module/common/Action`),
   auth: require(`../../module/auth/Action`),
+  user: require(`../../module/user/Action`),
 };
 
 export const Actions = _(ModuleSet)

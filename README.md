@@ -66,7 +66,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
@@ -95,3 +95,70 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## Android – Building the app
+
+To ensure the Gradle build can find `node`, open Android Studio from the terminal:
+
+```bash
+cd /Users/ramesh/Documents/ToilApp
+open -a "Android Studio" android
+```
+
+Then build the Android project from Android Studio.
+
+## Android Emulator – Running without Android Studio
+
+You can start the Android emulator directly from the command line without opening Android Studio:
+
+### List available AVDs (Android Virtual Devices)
+
+```bash
+cd ~/Library/Android/sdk/emulator
+./emulator -list-avds
+```
+
+This will display all available emulator configurations, for example:
+
+- `Pixel_9_Pro`
+- `Pixel_5_API_30`
+
+### Start a specific emulator
+
+```bash
+cd ~/Library/Android/sdk/emulator
+./emulator -avd Pixel_9_Pro
+```
+
+Replace `Pixel_9_Pro` with the name of your AVD.
+
+### Check connected devices
+
+To verify the emulator is running and connected:
+
+```bash
+adb devices
+```
+
+You should see output like:
+
+```
+List of devices attached
+emulator-5554   device
+```
+
+### Kill a running emulator
+
+If you need to stop a running emulator:
+
+```bash
+adb -s emulator-5554 emu kill
+```
+
+Replace `emulator-5554` with your emulator's ID from the `adb devices` output.
+
+### Tips
+
+- Make sure the Android SDK is installed and the `ANDROID_HOME` environment variable is set
+- Add `~/Library/Android/sdk/emulator` and `~/Library/Android/sdk/platform-tools` to your PATH for easier access to `emulator` and `adb` commands
+- You can run the emulator in the background by adding `&` at the end of the command: `./emulator -avd Pixel_9_Pro &`

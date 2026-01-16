@@ -1,0 +1,28 @@
+name: CI - install
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure npm auth for GitHub Packages
+        run: |
+          echo "@Ramesh-Chathuranga:registry=https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_READ_PACKAGES_TOKEN }}" >> ~/.npmrc
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build (optional)
+        run: npm run build

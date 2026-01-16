@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "312869617692",
+    "project_id": "toil-e94cd",
+    "storage_bucket": "toil-e94cd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312869617692:android:a150e8d36163e00d4c1fd9",
+        "android_client_info": {
+          "package_name": "com.toilapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMLsbhjXo8qhgPLTgkxYnHRf0MOBv6Sao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
